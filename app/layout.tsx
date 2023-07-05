@@ -1,9 +1,6 @@
 import { Button } from '@/components/ui/button';
-import { Inter } from 'next/font/google';
 import Link from 'next/link';
 import './globals.css';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Create Next App',
