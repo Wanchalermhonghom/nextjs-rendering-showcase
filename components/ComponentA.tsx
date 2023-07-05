@@ -1,9 +1,10 @@
 'use client';
-import { fetchUser, UserType } from '@/services/fetchUser';
-import { useEffect, useState } from 'react';
-import ComponentB from '../components/ComponentB';
 
-export default function Home() {
+import { UserType, fetchUser } from '@/services/fetchUser';
+import { useEffect, useState } from 'react';
+
+function ComponentA() {
+  //suspense render as you fetch
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState<UserType | null>(null);
 
@@ -15,12 +16,12 @@ export default function Home() {
   }, []);
 
   if (isLoading) return <div>Loading...</div>;
-  //fetch on render
   return (
-    <main className="">
+    <div>
       <span>ComponentA</span>
       <p>{JSON.stringify(user)}</p>
-      <ComponentB />
-    </main>
+    </div>
   );
 }
+
+export default ComponentA;
