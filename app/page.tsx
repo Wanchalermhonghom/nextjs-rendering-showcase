@@ -15,7 +15,7 @@ export default function Home() {
   }, []);
 
   if (isLoading) return <div>Loading...</div>;
-  //fetch on render
+
   return (
     <main className="">
       <span>ComponentA</span>
